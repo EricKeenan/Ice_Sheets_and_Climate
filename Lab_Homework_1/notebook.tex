@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{Eric\_Keenan\_HW\_1}
+    \title{Eric\_Keenan\_HW1}
     
     
     
@@ -283,8 +283,6 @@
     \section{Ice Sheets and Climate - Eric Keenan - Homework \#
 1}\label{ice-sheets-and-climate---eric-keenan---homework-1}
 
-\subsection{Due February 10th}\label{due-february-10th}
-
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
@@ -294,40 +292,51 @@
 
     \section{1. Marine Records}\label{marine-records}
 
-\paragraph{1.b. Benthic d18-O has generally been increasing over the
-last 70 million years. This means that ice volumne has been increasing.
-As ice sheets grow, d18-O depleted water accumulates on ice sheets which
-means that d18-O enriched water accumulates in the
-ocean.}\label{b.-benthic-d18-o-has-generally-been-increasing-over-the-last-70-million-years.-this-means-that-ice-volumne-has-been-increasing.-as-ice-sheets-grow-d18-o-depleted-water-accumulates-on-ice-sheets-which-means-that-d18-o-enriched-water-accumulates-in-the-ocean.}
+\paragraph{\texorpdfstring{1.b. Benthic \(\delta\)\(^{18}\)O has
+generally been increasing over the last 70 million years. This means
+that ice volumne has been increasing. As ice sheets grow,
+\(\delta\)\(^{18}\)O depleted water accumulates on ice sheets which
+means that \(\delta\)\(^{18}\)O enriched water accumulates in the
+ocean.}{1.b. Benthic \textbackslash{}delta\^{}\{18\}O has generally been increasing over the last 70 million years. This means that ice volumne has been increasing. As ice sheets grow, \textbackslash{}delta\^{}\{18\}O depleted water accumulates on ice sheets which means that \textbackslash{}delta\^{}\{18\}O enriched water accumulates in the ocean.}}\label{b.-benthic-delta18o-has-generally-been-increasing-over-the-last-70-million-years.-this-means-that-ice-volumne-has-been-increasing.-as-ice-sheets-grow-delta18o-depleted-water-accumulates-on-ice-sheets-which-means-that-delta18o-enriched-water-accumulates-in-the-ocean.}
 
-\paragraph{1.c. 34 million years ago there was a suddent increase in
-d18-O, this indicates a cooling of the climate. Therefore it is likely
-that 34 million years ago, ice sheets developed and grew on
-Earth.}\label{c.-34-million-years-ago-there-was-a-suddent-increase-in-d18-o-this-indicates-a-cooling-of-the-climate.-therefore-it-is-likely-that-34-million-years-ago-ice-sheets-developed-and-grew-on-earth.}
+\paragraph{\texorpdfstring{1.c. 34 million years ago there was a sudden
+increase in \(\delta\)\(^{18}\)O, this indicates a cooling of the
+climate. Therefore it is likely that 34 million years ago, ice sheets
+developed and grew on Earth leading to the observed increase in
+\(\delta\)\(^{18}\)O in the marine
+record.}{1.c. 34 million years ago there was a sudden increase in \textbackslash{}delta\^{}\{18\}O, this indicates a cooling of the climate. Therefore it is likely that 34 million years ago, ice sheets developed and grew on Earth leading to the observed increase in \textbackslash{}delta\^{}\{18\}O in the marine record.}}\label{c.-34-million-years-ago-there-was-a-sudden-increase-in-delta18o-this-indicates-a-cooling-of-the-climate.-therefore-it-is-likely-that-34-million-years-ago-ice-sheets-developed-and-grew-on-earth-leading-to-the-observed-increase-in-delta18o-in-the-marine-record.}
 
-\paragraph{1.d. Milankovich is high frequency, long term carbon
-cycle?}\label{d.-milankovich-is-high-frequency-long-term-carbon-cycle}
+\paragraph{\texorpdfstring{1.d. Milankovitch cycles arising from
+variations in Earth's orbital paramters explain the high frequency
+variations. Meanwhile, slower tectonic processes manipulate Earth's
+climate and therefore \(\delta\)\(^{18}\)O over longer time
+scales.}{1.d. Milankovitch cycles arising from variations in Earth's orbital paramters explain the high frequency variations. Meanwhile, slower tectonic processes manipulate Earth's climate and therefore \textbackslash{}delta\^{}\{18\}O over longer time scales.}}\label{d.-milankovitch-cycles-arising-from-variations-in-earths-orbital-paramters-explain-the-high-frequency-variations.-meanwhile-slower-tectonic-processes-manipulate-earths-climate-and-therefore-delta18o-over-longer-time-scales.}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Load data}
         \PY{n}{file\PYZus{}path}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{zachos2001.csv}\PY{l+s+s2}{\PYZdq{}}
         \PY{n}{zachos} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{file\PYZus{}path}\PY{p}{)}
-        \PY{n}{time} \PY{o}{=} \PY{n}{zachos}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Age (Ma)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-        \PY{n}{d18O} \PY{o}{=} \PY{n}{zachos}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d18O(5pt**)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{marine\PYZus{}time} \PY{o}{=} \PY{n}{zachos}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Age (Ma)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{marine\PYZus{}d18O} \PY{o}{=} \PY{n}{zachos}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d18O(5pt**)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
         
-        \PY{c+c1}{\PYZsh{} Plot}
-        \PY{n}{fig1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{time}\PY{p}{,} \PY{n}{d18O}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Million Years Ago}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{d18O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{invert\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} Plot last \PYZti{}70 million years}
+        \PY{n}{fig1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{marine\PYZus{}time}\PY{p}{,} \PY{n}{marine\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Million Years Ago}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Marine Record}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nanmax}\PY{p}{(}\PY{n}{marine\PYZus{}time}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
         
-        \PY{n}{fig1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{time}\PY{p}{,} \PY{n}{d18O}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Million Years Ago}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{d18O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} Plot last 5 million years}
+        \PY{n}{fig1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{marine\PYZus{}time}\PY{p}{,} \PY{n}{marine\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Million Years Ago}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Marine Record}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{invert\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -341,8 +350,166 @@ cycle?}\label{d.-milankovich-is-high-frequency-long-term-carbon-cycle}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \section{2. Ice Cores}\label{ice-cores}
+    \section{2. Ice Core Records}\label{ice-core-records}
 
+\paragraph{\texorpdfstring{2.c. Glacial periods are relatively cool with
+low \(\delta\)\(^{18}\)O, while interglacials are relatively warm with
+high \(\delta\)\(^{18}\)O. Glacial periods are typically 2-4 times
+longer than interglacial periods. We are currently in an interglacial
+period, the
+Holocene.}{2.c. Glacial periods are relatively cool with low \textbackslash{}delta\^{}\{18\}O, while interglacials are relatively warm with high \textbackslash{}delta\^{}\{18\}O. Glacial periods are typically 2-4 times longer than interglacial periods. We are currently in an interglacial period, the Holocene.}}\label{c.-glacial-periods-are-relatively-cool-with-low-delta18o-while-interglacials-are-relatively-warm-with-high-delta18o.-glacial-periods-are-typically-2-4-times-longer-than-interglacial-periods.-we-are-currently-in-an-interglacial-period-the-holocene.}
+
+\paragraph{\texorpdfstring{2.d. Both records show warming in the lat
+20,000 years leading to the Holocene. However, the GISP-2 record shows
+more variability in \(\delta\)\(^{18}\)O than Dome Fuji. GISP-2 has
+higher temperal resolution \(\delta\)\(^{18}\)O in the last 40,000
+years, while Dome Fuji appears to have higher temporal resolution before
+60,000 years
+ago.}{2.d. Both records show warming in the lat 20,000 years leading to the Holocene. However, the GISP-2 record shows more variability in \textbackslash{}delta\^{}\{18\}O than Dome Fuji. GISP-2 has higher temperal resolution \textbackslash{}delta\^{}\{18\}O in the last 40,000 years, while Dome Fuji appears to have higher temporal resolution before 60,000 years ago.}}\label{d.-both-records-show-warming-in-the-lat-20000-years-leading-to-the-holocene.-however-the-gisp-2-record-shows-more-variability-in-delta18o-than-dome-fuji.-gisp-2-has-higher-temperal-resolution-delta18o-in-the-last-40000-years-while-dome-fuji-appears-to-have-higher-temporal-resolution-before-60000-years-ago.}
+
+\paragraph{\texorpdfstring{2.e. Both records indicate consistent timing
+glacial and interglacial periods. However, Dome Fuji exhibhits larger
+\(\delta\)\(^{18}\)O variability than the marine core, perhaps because
+the ocean is a larger water resevoir than Antarctica. Additionally, the
+ice core is a much higher temperal resolution than the marine
+core.}{2.e. Both records indicate consistent timing glacial and interglacial periods. However, Dome Fuji exhibhits larger \textbackslash{}delta\^{}\{18\}O variability than the marine core, perhaps because the ocean is a larger water resevoir than Antarctica. Additionally, the ice core is a much higher temperal resolution than the marine core.}}\label{e.-both-records-indicate-consistent-timing-glacial-and-interglacial-periods.-however-dome-fuji-exhibhits-larger-delta18o-variability-than-the-marine-core-perhaps-because-the-ocean-is-a-larger-water-resevoir-than-antarctica.-additionally-the-ice-core-is-a-much-higher-temperal-resolution-than-the-marine-core.}
+
+\paragraph{2.f. Accumulation rates must be low enough such that up 1.5
+million years of accumulation are present in the ice column.
+Temperatures must be low enough in order to prevent melt and sublimation
+from ablating the ice. And ice flow must be minimal so that scientists
+can be confident that the ice in the core originatated from the drilling
+location as opposed to advecting
+there.}\label{f.-accumulation-rates-must-be-low-enough-such-that-up-1.5-million-years-of-accumulation-are-present-in-the-ice-column.-temperatures-must-be-low-enough-in-order-to-prevent-melt-and-sublimation-from-ablating-the-ice.-and-ice-flow-must-be-minimal-so-that-scientists-can-be-confident-that-the-ice-in-the-core-originatated-from-the-drilling-location-as-opposed-to-advecting-there.}
+
+    \subsection{GISP2}\label{gisp2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} Load data}
+        \PY{n}{file\PYZus{}path}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gispd18o.txt}\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{gisp} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{n}{file\PYZus{}path}\PY{p}{,} \PY{n}{skiprows}\PY{o}{=}\PY{l+m+mi}{51}\PY{p}{)}
+        \PY{n}{gisp2\PYZus{}depth} \PY{o}{=} \PY{n}{gisp}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+        \PY{n}{gisp2\PYZus{}d18O} \PY{o}{=} \PY{n}{gisp}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{n}{gisp2\PYZus{}age} \PY{o}{=} \PY{n}{gisp}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}
+        
+        \PY{c+c1}{\PYZsh{} Filter data}
+        \PY{n}{gisp2\PYZus{}age}\PY{p}{[}\PY{n}{gisp2\PYZus{}age} \PY{o}{\PYZgt{}} \PY{l+m+mi}{200000}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nan}
+        \PY{n}{gisp2\PYZus{}age}\PY{p}{[}\PY{n}{gisp2\PYZus{}d18O} \PY{o}{\PYZgt{}} \PY{l+m+mi}{10}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nan}
+        \PY{n}{gisp2\PYZus{}d18O}\PY{p}{[}\PY{n}{gisp2\PYZus{}age} \PY{o}{\PYZgt{}} \PY{l+m+mi}{200000}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nan}
+        \PY{n}{gisp2\PYZus{}d18O}\PY{p}{[}\PY{n}{gisp2\PYZus{}d18O} \PY{o}{\PYZgt{}} \PY{l+m+mi}{10}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nan}
+        
+        \PY{c+c1}{\PYZsh{} Plot }
+        \PY{n}{fig3} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{gisp2\PYZus{}age} \PY{o}{/} \PY{l+m+mi}{1000}\PY{p}{,} \PY{n}{gisp2\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Thousand Years Before 1950}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{GISP2 Ice Core}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nanmax}\PY{p}{(}\PY{n}{gisp2\PYZus{}age}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{1000}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{Dome Fuji}\label{dome-fuji}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Load data}
+        \PY{n}{file\PYZus{}path}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{df2012isotope\PYZhy{}temperature.txt}\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{df} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{n}{file\PYZus{}path}\PY{p}{,} \PY{n}{skiprows}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{usecols}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{)}\PY{p}{)}
+        \PY{n}{df\PYZus{}age} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}
+        \PY{n}{df\PYZus{}d18O} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}
+        
+        \PY{c+c1}{\PYZsh{} Plot }
+        \PY{n}{fig4}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}age}\PY{p}{,} \PY{n}{df\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Thousand Years Before 2000}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dome Fuji Ice Core}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nanmax}\PY{p}{(}\PY{n}{df\PYZus{}age}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Add shading for interglacial/glacial periods}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Interglacial}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{110}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Glacial}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{110}\PY{p}{,} \PY{l+m+mi}{135}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{135}\PY{p}{,} \PY{l+m+mi}{194}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{194}\PY{p}{,} \PY{l+m+mi}{225}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{225}\PY{p}{,} \PY{l+m+mi}{235}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{235}\PY{p}{,} \PY{l+m+mi}{250}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{250}\PY{p}{,} \PY{l+m+mi}{320}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axvspan}\PY{p}{(}\PY{l+m+mi}{320}\PY{p}{,} \PY{l+m+mi}{340}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} <matplotlib.legend.Legend at 0x1170fc8d0>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{GISP2 and Dome Fuji}\label{gisp2-and-dome-fuji}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} Data manipulations, convert to thousands of years before 2000}
+        \PY{n}{gisp2\PYZus{}age\PYZus{}yb2000} \PY{o}{=} \PY{p}{(}\PY{n}{gisp2\PYZus{}age} \PY{o}{+} \PY{l+m+mi}{50}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{1000}
+        \PY{n}{df\PYZus{}age\PYZus{}yb2000} \PY{o}{=} \PY{n}{df\PYZus{}age} 
+        \PY{n}{gisp2\PYZus{}max} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nanmax}\PY{p}{(}\PY{n}{gisp2\PYZus{}age\PYZus{}yb2000}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Plot }
+        \PY{n}{fig5}\PY{p}{,} \PY{n}{ax1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ax2} \PY{o}{=} \PY{n}{ax1}\PY{o}{.}\PY{n}{twinx}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{gisp2\PYZus{}age\PYZus{}yb2000}\PY{p}{,} \PY{n}{gisp2\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax2}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}age\PYZus{}yb2000}\PY{p}{,} \PY{n}{df\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Thousand Years Before 2000}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{GISP2 }\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax2}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dome Fuji }\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{GISP2 and Dome Fuji}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{gisp2\PYZus{}max}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_10_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{Ice Cores and Marine
+Cores}\label{ice-cores-and-marine-cores}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{c+c1}{\PYZsh{} Data manipulations, convert to thousands of years ago}
+        \PY{n}{df\PYZus{}age\PYZus{}yb2000} \PY{o}{=} \PY{n}{df\PYZus{}age} 
+        \PY{n}{marine\PYZus{}time\PYZus{}yb2000} \PY{o}{=} \PY{n}{marine\PYZus{}time} \PY{o}{*} \PY{l+m+mi}{1000}
+        \PY{n}{df\PYZus{}max} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nanmax}\PY{p}{(}\PY{n}{df\PYZus{}age\PYZus{}yb2000}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Plot }
+        \PY{n}{fig6}\PY{p}{,} \PY{n}{ax1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ax2} \PY{o}{=} \PY{n}{ax1}\PY{o}{.}\PY{n}{twinx}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{marine\PYZus{}time\PYZus{}yb2000}\PY{p}{,} \PY{n}{marine\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax2}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}age\PYZus{}yb2000}\PY{p}{,} \PY{n}{df\PYZus{}d18O}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Thousand Years Ago}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{)}
+        \PY{n}{ax1}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Marine }\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax2}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dome Fuji }\PY{l+s+se}{\PYZbs{}u03B4}\PY{l+s+s2}{\PYZdl{}\PYZca{}}\PY{l+s+si}{\PYZob{}18\PYZcb{}}\PY{l+s+s2}{\PYZdl{}O}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Marine Core and Dome Fuji Ice Core}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{df\PYZus{}max}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_12_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
 
     % Add a bibliography block to the postdoc
     
